@@ -1,0 +1,59 @@
+<html class="dark" id="oranda" lang="en"><head><title>oranda</title><meta content="https://oranda.axo.dev" property="og:url"/><link href="/oranda/favicon.ico" rel="icon"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content=">o_o<" name="description"/><meta content=">o_o<" name="description"/><meta content=">o_o<" property="og:description"/><meta content="website" property="og:type"/><meta content="oranda" property="og:title"/><meta content="interest-cohort=()" http_equiv="Permissions-Policy"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.axo.dev/meta_small.jpeg" property="og:image"/><meta content="axo" property="og:image:alt"/><meta content="@axodotdev" name="twitter:creator"/><meta content="@axodotdev" name="twitter:site"/><link href="fringe@0.0.10.css" rel="stylesheet"/></head><body><div class="container"><div class="repo_banner"><a href="https://github.com/axodotdev/oranda"><div class="github-icon" aria-hidden="true"></div>Check out our GitHub</a></div><main><header><h1 class="title">oranda</h1><nav class="nav"><ul><li><a href="/oranda">Home</a></li><li><a href="/oranda/configuration.html">configuration</a></li><li><a href="/oranda/themes.html">themes</a></li><li><a href="/oranda/assets.html">assets</a></li><li><a href="/oranda/hosting.html">hosting</a></li><li><a href="/oranda/artifacts.html">Install</a></li></ul></nav></header><div><h1>Configuration</h1>
+<p><code>oranda</code> is designed to work with no configuration- for projects with a
+<code>package.json</code> or <code>Cargo.toml</code>, <code>oranda</code> will grab the project metadata it needs
+from your project manifest file.</p>
+<p>If you project has both a <code>Cargo.toml</code> and a <code>package.json</code> we recommend defining
+project metadata fields like <code>name</code> in your <code>oranda.json</code>.</p>
+<h2>Manifest file: <code>oranda.json</code></h2>
+<p>If you'd like to customize your project you can do so in a  <code>oranda.json</code> file.</p>
+<p>For example:</p>
+<pre style="background-color:#263238;"><span style="color:#89ddff;">{
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"homepage"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">https://oranda.axo.dev</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"readme_path"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">dev/README.md</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"theme"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">light</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"repository"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">https://github.com/axodotdev/oranda</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"additional_pages"</span><span style="color:#89ddff;">: ["</span><span style="color:#c3e88d;">dev/additional.md</span><span style="color:#89ddff;">"],
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"favicon"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">https://www.axo.dev/favicon.ico</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"analytics"</span><span style="color:#89ddff;">: {
+</span><span style="color:#eeffff;">    </span><span style="color:#ffcb6b;">"plausible"</span><span style="color:#89ddff;">: {
+</span><span style="color:#eeffff;">      </span><span style="color:#f78c6c;">"domain"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">tools.axo.dev/oranda</span><span style="color:#89ddff;">"
+</span><span style="color:#eeffff;">    </span><span style="color:#89ddff;">}
+</span><span style="color:#eeffff;">  </span><span style="color:#89ddff;">},
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"social"</span><span style="color:#89ddff;">: {
+</span><span style="color:#eeffff;">    </span><span style="color:#ffcb6b;">"image"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">https://www.axo.dev/meta_small.jpeg</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">    </span><span style="color:#ffcb6b;">"image_alt"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">axo</span><span style="color:#89ddff;">",
+</span><span style="color:#eeffff;">    </span><span style="color:#ffcb6b;">"twitter_account"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">@axodotdev</span><span style="color:#89ddff;">"
+</span><span style="color:#eeffff;">  </span><span style="color:#89ddff;">}
+</span><span style="color:#89ddff;">}
+</span></pre>
+
+<p>**NOTE: All paths in <code>oranda.json</code> are relative to the <code>oranda.json</code> file. We
+recommend placing this file in the root of your project, alongside any other
+project manifest files you may be using, such as a <code>package.json</code> or <code>Cargo.toml</code>.</p>
+<h2>Project Metadata</h2>
+<h3>Name</h3>
+<p>The name set will be used in the title of your website and also as the main heading.</p>
+<p>By default Oranda will always look for this value in your <code>package.json</code>/<code>cargo.toml</code> and use it unless the value in the <code>oranda.json</code> overrides it.</p>
+<pre style="background-color:#263238;"><span style="color:#89ddff;">{
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"name"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">String</span><span style="color:#89ddff;">"
+</span><span style="color:#89ddff;">}
+</span></pre>
+
+<h3>Description</h3>
+<p>The description set will be used in the description tag of your website and this is mostly used for SEO.</p>
+<p>By default Oranda will always look for this value in your <code>package.json</code>/<code>cargo.toml</code> and use it unless the value in the <code>oranda.json</code> overrides it.</p>
+<pre style="background-color:#263238;"><span style="color:#89ddff;">{
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"description"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">String</span><span style="color:#89ddff;">"
+</span><span style="color:#89ddff;">}
+</span></pre>
+
+<h3>Repository</h3>
+<h3>Homepage</h3>
+<p>The homepage set will be used in the meta tags of your website.</p>
+<p>By default Oranda will always look for this value in your <code>package.json</code>/<code>cargo.toml</code> and use it unless the value in the <code>oranda.json</code> overrides it.</p>
+<pre style="background-color:#263238;"><span style="color:#89ddff;">{
+</span><span style="color:#eeffff;">  </span><span style="color:#c792ea;">"homepage"</span><span style="color:#89ddff;">: "</span><span style="color:#c3e88d;">String</span><span style="color:#89ddff;">"
+</span><span style="color:#89ddff;">}
+</span></pre>
+
+</div></main><footer class="axo-gradient flex items-center justify-between px-4 py-2 text-slate-50 text-xs w-full"><a href="https://github.com/axodotdev/oranda"><div class="footer github-icon" aria-hidden="true"></div></a><span>oranda, MIT OR Apache-2.0 license.</span></footer></div></body></html>
